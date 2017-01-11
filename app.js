@@ -56,6 +56,21 @@ app.post('/tbeep',function(req,res){
 	if (cm[1] == "hola"){
 		res.json({text: "Hola estimado!"});
 	};
+	if (cm[1] == "saldoBip"){
+		var number = cm[3];
+		bip(number)
+		.then(function(response){
+
+			var tarjeta = response;
+
+			res.json({text: tarjeta.balance});
+
+			console.log(tarjeta.balance);
+		})
+		.catch(function(err){
+			console.log(err);
+		});
+	};
 	if (cm[1] == "saldo"){
 		var number = cm[3];
 		bip(number)
