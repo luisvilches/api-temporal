@@ -47,7 +47,7 @@ app.post('/saldo',function(req,res){
 app.post('/tbeep',function(req,res){
 	var string = req.body.text;
 	var cm = string.split(" ");
-	if (cm[1] == ""){
+	if (cm[1] == " "){
 		res.json({text: "dime"});
 	};
 	if (cm[1] == "oye"){
@@ -55,6 +55,21 @@ app.post('/tbeep',function(req,res){
 	};
 	if (cm[1] == "hola"){
 		res.json({text: "Hola estimado!"});
+	};
+	if (cm[1] == "saldo"){
+		var number = cm[3];
+		bip(number)
+		.then(function(response){
+
+			var tarjeta = response;
+
+			res.json({text: tarjeta.balance});
+
+			console.log(tarjeta.balance);
+		})
+		.catch(function(err){
+			console.log(err);
+		});
 	};
 });
 
