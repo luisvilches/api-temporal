@@ -25,7 +25,7 @@ app.get('/saldo/:number',function(req,res){
 	});
 });
 
-app.get('/saldo',function(req,res){
+app.post('/saldo',function(req,res){
 	var number = req.body.trigger_word;
 
 	bip(number)
@@ -42,7 +42,7 @@ app.get('/saldo',function(req,res){
 	});
 });
 
-app.get('/tbeep',function(req,res){
+app.post('/tbeep',function(req,res){
 	res.json({text: "hola"});
 });
 
