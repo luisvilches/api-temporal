@@ -25,6 +25,23 @@ app.get('/saldo/:number',function(req,res){
 	});
 });
 
+app.get('/saldo',function(req,res){
+	var number = req.body.text;
+
+	bip(number)
+	.then(function(response){
+
+		var tarjeta = response;
+
+		res.jsonp({text: tarjeta.balance});
+
+		console.log(tarjeta.balance);
+	})
+	.catch(function(err){
+		console.log(err);
+	});
+});
+
 
 app.get('/paradero/:paradero',cors(),function(req,res){
 
