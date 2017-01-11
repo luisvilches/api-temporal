@@ -45,17 +45,17 @@ app.post('/saldo',function(req,res){
 });
 
 app.post('/tbeep',function(req,res){
-	var string = req.body.trigger_word;
+	var string = req.body.text;
 	var cm = string.split(" ");
-	//if (cm[1] == ""){
-	res.json({text: req.body.text});
-	//};
-	//if (cm[1] == "dowhi"){
-	//	res.json({text: "Dime?"});
-	//};
-	//if (cm[1] == "hola"){
-	//	res.json({text: "Hola estimado!"});
-	//};
+	if (cm[1] == ""){
+		res.json({text: "dime"});
+	};
+	if (cm[1] == "oye"){
+		res.json({text: "ah?"});
+	};
+	if (cm[1] == "hola"){
+		res.json({text: "Hola estimado!"});
+	};
 });
 
 
