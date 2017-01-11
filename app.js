@@ -2,9 +2,11 @@ const express = require('express');
 const cors = require('cors');
 const bip = require('bip');
 const parada = require('transantiago-client');
+const bodyParser = require('body-parser');
 
 app = express();
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
 app.use(cors());
 app.set('port', process.env.PORT || 5000);
 
@@ -47,6 +49,7 @@ app.post('/tbeep',function(req,res){
 	//var cm = string.split(" ",3);
 	
 	res.json({text: "hola que tal"});
+	res.json({text: req.body});
 	
 	//if (cm[1] == "saldo"){
 	//	res.json({text: "tu saldo es:  $1200"});
