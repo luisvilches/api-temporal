@@ -22,6 +22,9 @@ app.post('/tbeep',function(req,res){
 	if (cm[1] == "hola"){
 		res.json({text: "Hola estimado!"});
 	};
+	if (cm[1] == "gracias"){
+		res.json({text: "De nada estimado, un placer ayudarlo!"});
+	};
 	if (cm[1] == "saldoBip"){
 		var number = cm[2];
 		bip(number)
