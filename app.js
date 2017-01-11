@@ -10,40 +10,6 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(cors());
 app.set('port', process.env.PORT || 5000);
 
-app.get('/saldo/:number',function(req,res){
-	var number = req.params.number;
-
-	bip(number)
-	.then(function(response){
-
-		var tarjeta = response;
-
-		res.jsonp({text: tarjeta.balance});
-
-		console.log(tarjeta.balance);
-	})
-	.catch(function(err){
-		console.log(err);
-	});
-});
-
-app.post('/saldo',function(req,res){
-	var number = req.body.trigger_word;
-
-	bip(number)
-	.then(function(response){
-
-		var tarjeta = response;
-
-		res.jsonp({text: tarjeta.balance});
-
-		console.log(tarjeta.balance);
-	})
-	.catch(function(err){
-		console.log(err);
-	});
-});
-
 app.post('/tbeep',function(req,res){
 	var string = req.body.text;
 	var cm = string.split(" ");
@@ -61,7 +27,7 @@ app.post('/tbeep',function(req,res){
 		bip(number)
 		.then(function(response){
 			var tarjeta = response;
-			res.json({text: "Estimado el saldo de tu tarjeta bip! es = $" + tarjeta.balance});
+			res.json({text: "Estimado el saldo de su tarjeta bip! es = $" + tarjeta.balance});
 		})
 		.catch(function(err){
 			res.json({text: "No pude obtener la informacion de su tarjeta, lo siento"});
