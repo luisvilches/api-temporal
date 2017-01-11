@@ -16,7 +16,7 @@ app.get('/saldo/:number',cors(),function(req,res){
 
 		var tarjeta = response;
 
-		res.jsonp(tarjeta);
+		res.jsonp(text{tarjeta.balance});
 
 		console.log(tarjeta.balance);
 	})
