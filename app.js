@@ -26,7 +26,7 @@ app.get('/saldo/:number',function(req,res){
 });
 
 app.get('/saldo',function(req,res){
-	var number = req.body.text;
+	var number = req.body.text.disparador;
 
 	bip(number)
 	.then(function(response){
