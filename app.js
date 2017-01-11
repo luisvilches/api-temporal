@@ -47,15 +47,15 @@ app.post('/saldo',function(req,res){
 app.post('/tbeep',function(req,res){
 	var string = req.body.trigger_word;
 	var cm = string.split(" ");
-	if (cm[1] == ""){
-		res.json({text: "me pase po!!!!"});
-	};
-	if (cm[1] == "dowhi"){
-		res.json({text: "Dime?"});
-	};
-	if (cm[1] == "hola"){
-		res.json({text: "Hola estimado!"});
-	};
+	//if (cm[1] == ""){
+		res.json({text: cm});
+	//};
+	//if (cm[1] == "dowhi"){
+	//	res.json({text: "Dime?"});
+	//};
+	//if (cm[1] == "hola"){
+	//	res.json({text: "Hola estimado!"});
+	//};
 });
 
 
