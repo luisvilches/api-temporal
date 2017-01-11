@@ -45,11 +45,15 @@ app.post('/saldo',function(req,res){
 });
 
 app.post('/tbeep',function(req,res){
-	//var string = req.params;
-	//var cm = string.split(" ",3);
-	if (req.body.trigger_word = "dowhi"){
+	var string = req.body.trigger_word;
+	var cm = string.split(" ",3);
+	if (cm[1] = "dowhi"){
 	//res.json({text: "me pase po!"});
 		res.json({text: "me pase po!!!!"});
+	}
+	if (cm[1] = "hola"){
+	//res.json({text: "me pase po!"});
+		res.json({text: "Hola estimado!"});
 	}
 	
 	//if (cm[1] == "saldo"){
