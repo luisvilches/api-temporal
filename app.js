@@ -43,7 +43,9 @@ app.post('/saldo',function(req,res){
 });
 
 app.post('/tbeep',function(req,res){
-	var command = req.body;
+	var string = req.body;
+	var paser = JSON.parse(string);
+	var command = paser.trigger_word;
 	var cm = command.split(" ",3);
 	
 	if (cm[1] == "saldo"){
