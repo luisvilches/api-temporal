@@ -48,30 +48,13 @@ app.post('/tbeep',function(req,res){
 	
 	if (cm[2] == "saldo"){
 		res.json({text: "tu saldo es:  $1200"});
-	}
-	if (cm[2] == "hola"){
+	}else{
 		res.json({text: "hola"});
 	}
 	
 	
 });
 
-
-app.get('/paradero/:paradero',cors(),function(req,res){
-
-	var paradero = req.params.paradero;
-
-	parada(paradero).then(function(response){
-		var data = response;
-
-		res.jsonp(data)
-	})
-	.error(function(){
-
-		console.log(err);
-	});
-
-})
 
 app.listen(app.get('port'), function(){
 	console.log("corriendo en el puerto: "+ app.get('port'));
