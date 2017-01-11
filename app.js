@@ -48,7 +48,7 @@ app.post('/tbeep',function(req,res){
 	var string = req.body.trigger_word;
 	var cm = string.split(" ");
 	//if (cm[1] == ""){
-	res.json({text: string});
+	res.json({text: req.body.text});
 	//};
 	//if (cm[1] == "dowhi"){
 	//	res.json({text: "Dime?"});
