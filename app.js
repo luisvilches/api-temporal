@@ -43,8 +43,8 @@ app.post('/saldo',function(req,res){
 });
 
 app.post('/tbeep',function(req,res){
-	var command = req.body.trigger_word;
-	var cm = command.split(" ");
+	var command = req.body;
+	var cm = command.split(" ",3);
 	
 	if (cm[1] == "saldo"){
 		res.json({text: "tu saldo es:  $1200"});
