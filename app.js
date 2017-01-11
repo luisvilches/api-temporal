@@ -42,6 +42,10 @@ app.get('/saldo',function(req,res){
 	});
 });
 
+app.get('/tbeep',function(req,res){
+	res.json({text: "hola"});
+});
+
 
 app.get('/paradero/:paradero',cors(),function(req,res){
 
