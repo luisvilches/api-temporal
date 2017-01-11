@@ -46,7 +46,7 @@ app.post('/saldo',function(req,res){
 
 app.post('/tbeep',function(req,res){
 	var string = req.body.trigger_word;
-	var cm = string.split(" ",3);
+	var cm = string.split(" ");
 	if (cm[1] = "dowhi"){
 	//res.json({text: "me pase po!"});
 		res.json({text: "me pase po!!!!"});
