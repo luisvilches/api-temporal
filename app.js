@@ -48,8 +48,8 @@ app.post('/tbeep',function(req,res){
 	//var string = req.params;
 	//var cm = string.split(" ",3);
 	
-	//res.json({text: "hola que tal"});
-	res.json({text: req.body});
+	res.json({text: "hola que tal" + req.body});
+	//res.json({text: req.body});
 	
 	//if (cm[1] == "saldo"){
 	//	res.json({text: "tu saldo es:  $1200"});
