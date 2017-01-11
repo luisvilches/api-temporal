@@ -8,7 +8,7 @@ app = express();
 app.use(cors());
 app.set('port', process.env.PORT || 5000);
 
-app.get('/saldo/:number',cors(),function(req,res){
+app.get('/saldo/:number',function(req,res){
 	var number = req.params.number;
 
 	bip(number)
@@ -16,7 +16,7 @@ app.get('/saldo/:number',cors(),function(req,res){
 
 		var tarjeta = response;
 
-		res.jsonp(text: tarjeta.balance);
+		res.jsonp({text: tarjeta.balance});
 
 		console.log(tarjeta.balance);
 	})
